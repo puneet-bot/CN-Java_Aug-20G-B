@@ -1,14 +1,10 @@
 const express                       = require('express');
 const router                        = express.Router();
+const homeController                = require('../controllers/homecontroller');
 
+router.get('/',homeController.home)
 
-router.get('/',function(req,res){
-    res.send('<h1>Hello Java Group!</h1>')
-})
-
-router.get('/puneet',function(req,res){
-    res.send('<h1>Hello Puneet</h1>')
-});
+router.get('/puneet',homeController.puneet);
 
 
 console.log('Router Loaded!');
