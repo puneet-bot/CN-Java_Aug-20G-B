@@ -5,9 +5,10 @@ const port                          = 8000;
 
 
 
-app.get('/',function(req,res){
-    res.send('<h1>Hello Java Group!</h1>')
-})
+app.use('/',require('./routes'));
+
+// http://localhost:8000
+// http://localhost:8000/
 
 
 // app.listen(8000,function(req,res){
