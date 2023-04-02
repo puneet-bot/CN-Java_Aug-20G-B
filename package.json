@@ -1,0 +1,23 @@
+{
+  "name": "jokes-app",
+  "version": "1.0.0",
+  "description": "A Joke Web Application",
+  "main": "jokes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puneet-bot/CN-Java_Aug-20G-B.git"
+  },
+  "author": "Coding Ninjas Group B- Java'10Aug (Puneet)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puneet-bot/CN-Java_Aug-20G-B/issues"
+  },
+  "homepage": "https://github.com/puneet-bot/CN-Java_Aug-20G-B#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
