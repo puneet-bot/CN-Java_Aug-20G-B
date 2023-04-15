@@ -5,6 +5,7 @@ const port                          = 8000;
 const expressLayouts                = require('express-ejs-layouts');
 const db                            = require('./config/mongoose');
 const passport                      = require('passport');
+const passportLocal                 = require('./config/passport');
 
 // Set up Path to the static files
 app.use(express.static('./Assets'));
