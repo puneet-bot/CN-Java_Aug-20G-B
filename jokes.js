@@ -7,6 +7,8 @@ const db                            = require('./config/mongoose');
 const passport                      = require('passport');
 const passportLocal                 = require('./config/passport');
 
+app.use(express.urlencoded({extended:false}));
+
 // Set up Path to the static files
 app.use(express.static('./Assets'));
 
