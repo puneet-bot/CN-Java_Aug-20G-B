@@ -6,6 +6,7 @@ const expressLayouts                = require('express-ejs-layouts');
 const db                            = require('./config/mongoose');
 const passport                      = require('passport');
 const passportLocal                 = require('./config/passport');
+const session                       = require('express-session');
 
 app.use(express.urlencoded({extended:false}));
 
@@ -21,6 +22,26 @@ app.set('layout extractScripts', true);
 // set up the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+
+app.use(session({
+    name: 'Jokes',
+    // TODO change the secret before deployment in production mode
+    secret: 'joke123456',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    },
+    // store: mongoStore.create({
+    //     mongoUrl: db._connectionString,
+    //     autoRemove: 'disabled'
+    //   })
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
 
 app.use('/',require('./routes'));
 
