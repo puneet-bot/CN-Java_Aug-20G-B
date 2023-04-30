@@ -7,8 +7,11 @@ const db                            = require('./config/mongoose');
 const passport                      = require('passport');
 const passportLocal                 = require('./config/passport');
 const session                       = require('express-session');
+const mongoStore                    = require('connect-mongo');
+const cookieParser                  = require('cookie-parser');
 
 app.use(express.urlencoded({extended:false}));
+app.use(cookieParser());
 
 // Set up Path to the static files
 app.use(express.static('./Assets'));
@@ -33,10 +36,10 @@ app.use(session({
     cookie: {
         maxAge: (1000 * 60 * 100)
     },
-    // store: mongoStore.create({
-    //     mongoUrl: db._connectionString,
-    //     autoRemove: 'disabled'
-    //   })
+    store: mongoStore.create({
+        mongoUrl: db._connectionString,
+        autoRemove: 'disabled'
+      })
 }));
 
 app.use(passport.initialize());
