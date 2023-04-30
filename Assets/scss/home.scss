@@ -1,0 +1,20 @@
+$background-color_1: red;
+
+body {
+	background-color: $background-color_1;
+}
+.right-elements {
+	margin-left: 80%;
+	a {
+		&:hover {
+			text-decoration: underline;
+			transform: scale(1.1);
+		}
+	}
+}
+#joke-app {
+	&:hover {
+		text-decoration: underline;
+		transform: scale(1.1);
+	}
+}

@@ -1,3 +1,12 @@
-body{
-    background-color: red;
-}
+body {
+  background-color: red; }
+
+.right-elements {
+  margin-left: 80%; }
+  .right-elements a:hover {
+    text-decoration: underline;
+    transform: scale(1.1); }
+
+#joke-app:hover {
+  text-decoration: underline;
+  transform: scale(1.1); }

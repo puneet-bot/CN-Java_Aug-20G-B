@@ -9,8 +9,18 @@ const passportLocal                 = require('./config/passport');
 const session                       = require('express-session');
 const mongoStore                    = require('connect-mongo');
 const cookieParser                  = require('cookie-parser');
+const sassMiddleware                = require('node-sass-middleware');
+const path                          = require('path');
 
 app.use(express.urlencoded({extended:false}));
+app.use(sassMiddleware({
+    /* Options */
+    src: path.join(__dirname, 'Assets', 'scss')
+  , dest: path.join(__dirname, 'Assets', 'css')
+  , debug: true
+  , outputStyle: 'extended'
+  , prefix:  '/css'
+}));
 app.use(cookieParser());
 
 // Set up Path to the static files
