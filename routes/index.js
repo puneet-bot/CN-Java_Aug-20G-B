@@ -6,7 +6,9 @@ router.get('/',homeController.home)
 
 router.get('/puneet',homeController.puneet);
 
-router.use('/users',require('./users'))
+router.use('/users',require('./users'));
+
+router.use('/func',require('./functionality'));
 
 console.log('Router Loaded!');
 

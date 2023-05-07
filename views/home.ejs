@@ -1,5 +1,50 @@
-<center>
-<h1>
-   Hello Java Group!
-</h1>
-</center>
+<div class="Joke-container container">
+  <h1>Add a Joke</h1>
+  <form action="/func/create" method="POST">
+    <div class="mb-3">
+      <input
+        placeholder="Joke title"
+        name="joke_name"
+        class="form-control"
+        id="Joke_name"
+        type="text"
+      />
+    </div>
+    <div class="mb-3">
+      <textarea
+        name="joke_desc"
+        placeholder="Joke Joke Joke!"
+        class="form-control"
+        id="Joke_desc"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <input name="Image" class="form-control" type="file" id="image" />
+    </div>
+    <button class="btn btn-primary">Add a Joke</button>
+  </form>
+  <hr />
+  <div class="joke-content" style="margin-top: 50px">
+    <div class="container text-center">
+      <div class="row">
+        <%for(joke of jokes){%>
+        <div class="col">
+          <div class="card" style="width: 18rem; margin-top: 20px">
+            <img
+              src="<%=joke.joke_image%>"
+              class="card-img-top"
+              alt="<%=joke.joke_image%>"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%=joke.joke_title%></h5>
+              <p class="card-text"><%=joke.joke_description%></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
