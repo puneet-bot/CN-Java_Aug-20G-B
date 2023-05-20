@@ -39,7 +39,11 @@
             <div class="card-body">
               <h5 class="card-title"><%=joke.joke_title%></h5>
               <p class="card-text"><%=joke.joke_description%></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <%= joke.id %>
+              <%= joke._id %>
+              <form action="/func/editform/<%=joke.id%>" method="POST">
+              <button class="btn btn-primary">Go somewhere</button>
+              </form>
             </div>
           </div>
         </div>

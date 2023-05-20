@@ -1,0 +1,27 @@
+<form action="/func/edit" method="POST">
+  <%=joke%>
+  <div class="mb-3">
+    <input
+      placeholder="Joke title"
+      name="joke_name"
+      class="form-control"
+      id="Joke_name"
+      type="text"
+      value="<%=joke.joke_title%>"
+    />
+  </div>
+  <div class="mb-3">
+    <textarea
+      name="joke_desc"
+      placeholder="Joke Joke Joke!"
+      class="form-control"
+      id="Joke_desc"
+      rows="3"
+    ><%=joke.joke_description%></textarea>
+  </div>
+  <div class="mb-3">
+    <input name="Image" class="form-control" type="file" id="image" />
+  </div>
+  <input type="hidden" name="id" value="<%=joke._id%>">
+  <button class="btn btn-primary">Add a Joke</button>
+</form>
