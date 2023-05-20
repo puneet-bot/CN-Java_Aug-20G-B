@@ -31,6 +31,13 @@ router.post('/edit',async function(req,res){
     let joke=await jokeModel.findByIdAndUpdate(req.body.id,updatedJoke);
     console.log(joke);
     res.redirect('/');
+});
+
+router.post('/delete',async function(req,res){
+    // console.log('In delete',req.body);
+    let deletedJoke= await jokeModel.findByIdAndDelete(req.body.joke_id);
+    console.log(deletedJoke);
+    res.redirect('/');
 })
 
 module.exports = router;

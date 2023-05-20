@@ -42,7 +42,11 @@
               <%= joke.id %>
               <%= joke._id %>
               <form action="/func/editform/<%=joke.id%>" method="POST">
-              <button class="btn btn-primary">Go somewhere</button>
+              <button class="btn btn-primary">Edit</button>
+              </form>
+              <form action="/func/delete" method="POST">
+                <button class="btn btn-danger">Delete</button>
+                <input type="hidden" name="joke_id" value="<%=joke.id%>">
               </form>
             </div>
           </div>
