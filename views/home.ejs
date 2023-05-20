@@ -10,14 +10,25 @@
         type="text"
       />
     </div>
-    <div class="mb-3">
-      <textarea
-        name="joke_desc"
-        placeholder="Joke Joke Joke!"
-        class="form-control"
-        id="Joke_desc"
-        rows="3"
-      ></textarea>
+    <div>
+      <label>How many characters:</label>
+      <button id="use-existing">Use Existing</button>
+      <select id="select-char-number">
+        <option selected disabled>Select Number of Characters</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+
+    <section id="characters">
+      <!-- form elements here -->
+    </section>
+
+    <div id="Joke-form-content" class="mb-3">
+      <button>Character</button>
+      <textarea></textarea>
     </div>
     <div class="mb-3">
       <input name="Image" class="form-control" type="file" id="image" />
@@ -39,14 +50,13 @@
             <div class="card-body">
               <h5 class="card-title"><%=joke.joke_title%></h5>
               <p class="card-text"><%=joke.joke_description%></p>
-              <%= joke.id %>
-              <%= joke._id %>
+              <%= joke.id %> <%= joke._id %>
               <form action="/func/editform/<%=joke.id%>" method="POST">
-              <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-primary">Edit</button>
               </form>
               <form action="/func/delete" method="POST">
                 <button class="btn btn-danger">Delete</button>
-                <input type="hidden" name="joke_id" value="<%=joke.id%>">
+                <input type="hidden" name="joke_id" value="<%=joke.id%>" />
               </form>
             </div>
           </div>
@@ -56,3 +66,6 @@
     </div>
   </div>
 </div>
+
+<script src="/js/characterDisplay.js"></script>
+<link rel="stylesheet" href="/css/addJoke.css" />
