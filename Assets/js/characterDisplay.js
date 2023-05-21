@@ -28,7 +28,8 @@ charactersCount.addEventListener("change", function () {
   // Perform additional actions with the selected value
 });
 
-useExistingbtn.addEventListener("click", function () {
+useExistingbtn.addEventListener("click", function (e) {
+  e.preventDefault();
   document.getElementById("characters").style.display = "none";
   document.getElementById("select-char-number").style.display = "none";
 });
