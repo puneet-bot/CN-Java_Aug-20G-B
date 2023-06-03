@@ -35,6 +35,7 @@ const storage = multer.diskStorage({
   })
   
   jokeSchema.statics.uploadedAvatar=multer({ storage: storage }).single('joke');
+  jokeSchema.statics.characters=[];
   jokeSchema.statics.avatarPath=JOKES_PATH;
 const Joke=mongoose.model('Joke',jokeSchema);
 module.exports=Joke;

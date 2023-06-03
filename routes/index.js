@@ -10,6 +10,8 @@ router.use('/users',require('./users'));
 
 router.use('/func',require('./functionality'));
 
+router.use('/create',require('./character'));
+
 console.log('Router Loaded!');
 
 module.exports=router;

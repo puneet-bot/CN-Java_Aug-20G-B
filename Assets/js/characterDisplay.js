@@ -6,9 +6,11 @@ charactersCount.addEventListener("change", function () {
   const selectedValue = this.value;
   console.log(characterForm);
   if (selectedValue != null) {
-    let charDiv = document.createElement("div");
+    let charDiv = document.createElement("form");
     characterForm.innerHTML = "";
     charDiv.setAttribute("id", "char-container");
+    charDiv.setAttribute("method", "POST");
+    charDiv.setAttribute("action", "/create/characters");
     for (let i = 0; i < selectedValue; i++) {
       let input = document.createElement("input");
       input.setAttribute("type", "text");
@@ -17,9 +19,8 @@ charactersCount.addEventListener("change", function () {
       input.setAttribute("placeholder", "Enter Character");
       charDiv.appendChild(input);
     }
-    let button = document.createElement("a");
+    let button = document.createElement("button");
     button.innerHTML = "Add Charcters";
-    button.setAttribute("href", "/character");
     charDiv.appendChild(button);
     characterForm.appendChild(charDiv);
     characterForm.style.display = "block";
@@ -28,8 +29,13 @@ charactersCount.addEventListener("change", function () {
   // Perform additional actions with the selected value
 });
 
+if(useExistingbtn.value=='True'){
+  console.log('Yessss');
+}
+
 useExistingbtn.addEventListener("click", function (e) {
   e.preventDefault();
   document.getElementById("characters").style.display = "none";
   document.getElementById("select-char-number").style.display = "none";
+  document.getElementById("Joke-form-content").style.display="block";
 });

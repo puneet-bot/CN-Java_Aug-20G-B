@@ -1,6 +1,5 @@
 <div class="Joke-container container">
   <h1>Add a Joke</h1>
-  <form action="/func/create" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
       <input
         placeholder="Joke title"
@@ -25,10 +24,20 @@
     <section id="characters">
       <!-- form elements here -->
     </section>
+    <form action="/func/create" method="POST" enctype="multipart/form-data">
 
     <div id="Joke-form-content" class="mb-3">
-      <button>Character</button>
-      <textarea></textarea>
+      <div class="joke-body">
+        <div class="joke-body-iteration">
+        <select>
+          <%for(Character of characters){%>
+          <option value="<%= Character %>"><%= Character %></option>
+          <%}%>
+        </select>
+        <input placeholder="Joke">
+        <button id="addJoke">Add another line of Joke</button>
+      </div>
+      </div>
     </div>
     <div class="mb-3">
       <input name="joke" class="form-control" type="file" id="joke" />
