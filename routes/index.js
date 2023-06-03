@@ -12,6 +12,8 @@ router.use('/func',require('./functionality'));
 
 router.use('/create',require('./character'));
 
+router.use('/reset',require('./reset'));
+
 console.log('Router Loaded!');
 
 module.exports=router;

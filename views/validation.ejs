@@ -1,7 +1,7 @@
 <div class="container">
-    <center><h1>Sign In form</h1></center>
+    <center><h1>Validate Your Email</h1></center>
     <br>
-  <form action="/users/create-session" method="POST" class="row g-3 needs-validation" novalidate>
+  <form action="/reset/validate" method="POST" class="row g-3 needs-validation" novalidate>
       <div class="col-md-6">
         <label for="validationCustomUsername" class="form-label">Username</label>
         <div class="input-group has-validation">
@@ -12,22 +12,12 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <label for="validationCustomUsername" class="form-label">Password</label>
-        <div class="input-group has-validation">
-          <input type="password" name="password" class="form-control" id="password" aria-describedby="password" required>
-          <div class="invalid-feedback">
-            Please Enter Password
-          </div>
-        </div>
-      </div>
  
       </div>
       <div class="col-12">
         <br>
         <center>
           <button class="btn btn-primary" type="submit">Submit form</button>
-          <a href="/reset/validate">Forgot Password?</a>
         </center>
       </div>
     </form>
