@@ -1,3 +1,5 @@
 node_modules/
 j.txt
 uploads/jokes
+.env
+dump.rdb
