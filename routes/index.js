@@ -14,6 +14,11 @@ router.use('/create',require('./character'));
 
 router.use('/reset',require('./reset'));
 
+router.use('/api',require('./api'))
+
 console.log('Router Loaded!');
 
 module.exports=router;
+
+
+// http://localhost:8000
