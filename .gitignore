@@ -3,3 +3,4 @@ j.txt
 uploads/jokes
 .env
 dump.rdb
+config/secrets.js
