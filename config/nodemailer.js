@@ -26,11 +26,9 @@ let renderTemplate=(data,relativePath)=>{
             mailHTML=template;
         }
     )
-    console.log(mailHTML)
     return mailHTML;
 }
 
-console.log(transporter);
 
 module.exports={
     transporter:transporter,
